@@ -27,6 +27,17 @@ st.set_page_config(
     page_title="Office Day Planner", page_icon="🏢", layout="wide"
 )
 
+st.markdown(
+    """
+    <style>
+    /* Hide bottom-right Streamlit Cloud profile badge & footer */
+    footer {visibility: hidden;}
+    [data-testid="stStatusWidget"] {display: none !important;}
+    div[class*="viewerBadge"] {display: none !important;}
+    </style>
+""",
+    unsafe_allow_html=True,
+)
 
 def load_data():
   headers = {"X-Master-Key": JSONBIN_API_KEY}
