@@ -30,10 +30,22 @@ st.set_page_config(
 st.markdown(
     """
     <style>
-    /* Hide bottom-right Streamlit Cloud profile badge & footer */
+    /* Hide standard headers, footers, and menu */
+    #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
+    header {visibility: hidden;}
+
+    /* Hide Streamlit status widgets and toolbars */
+    [data-testid="stHeader"] {display: none !important;}
+    [data-testid="stToolbar"] {display: none !important;}
     [data-testid="stStatusWidget"] {display: none !important;}
+    [data-testid="stDecoration"] {display: none !important;}
+
+    /* Target Streamlit Cloud bottom-right profile & viewer badges */
     div[class*="viewerBadge"] {display: none !important;}
+    div[class*="profileContainer"] {display: none !important;}
+    [data-testid="manage-app-button"] {display: none !important;}
+    a[href*="streamlit.io"] {display: none !important;}
     </style>
 """,
     unsafe_allow_html=True,
